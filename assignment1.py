@@ -58,5 +58,28 @@ remove_inventory( str ) - this will remove at most one copy of an item from the 
   inventory. It should return True if it removed an item or False if the item was not found
 '''
 class Adventurer:
-  def __init__():
-    return 0
+  def test_constructor(self, name):
+    self.gold = 0
+    self.inventroy = []
+    self.name = name
+
+  def test_gold(self, lose_gold):
+    self.lose_gold = lose_gold
+    if self.gold - self.lose_gold < 0:
+        self.gold = 0
+        return False
+    else:
+        return True
+  
+  def test_wingold(self, win_gold):
+      self.win_gold = win_gold
+      self.gold = self.gold + self.win_gold
+
+  def test_add_inv(self, add_inventory):
+      self.inventroy.append(add_inventory)
+
+  def method_empty_inv(self, remove_inventory):
+    if remove_inventory in self.inventroy:
+        self.inventroy.remove(remove_inventory)
+    else:
+        return False
